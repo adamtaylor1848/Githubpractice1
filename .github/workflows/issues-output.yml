@@ -1,4 +1,4 @@
-name: With separate jobs
+name: Publish the info when asked
 on: issues
 jobs:
   output-info:
