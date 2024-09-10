@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
+//just for giggles
 import MainContent from './MainContent';
 
 describe('MainContent', () => {
