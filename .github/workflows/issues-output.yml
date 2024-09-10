@@ -1,8 +1,8 @@
-name: Publish the info when asked
+name: Publish the info when issue created
 on: issues
 jobs:
   output-info:
     runs-on: ubuntu-latest
     steps:
-    - name: Out put event details
+    - name: Output event details
       run: echo '${{ toJSON(github.event) }}'
