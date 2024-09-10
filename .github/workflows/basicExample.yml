@@ -1,39 +1,18 @@
-name: CI
-
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - main
-
+name: CI1
+on: push    
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-
+    - name: Get code
+      uses: actions/checkout@v3
     - name: Install dependencies
-      run: |
-        npm install prop-types@15.8.1 react@18.2.0 react-dom@18.2.0
-        npm install --save-dev @testing-library/jest-dom@5.16.5 @testing-library/react@13.3.0 @testing-library/user-event@14.4.3 @types/react@18.0.17 @types/react-dom@18.0.6 @vitejs/plugin-react@2.0.1 eslint@8.23.0 eslint-plugin-react@7.31.1 jsdom@20.0.0 vite@3.0.7 vite-plugin-eslint@1.8.1 vitest@0.22.1
-
-    - name: Run lint
+      run: npm ci
+    - name: Lint
       run: npm run lint
-
-    - name: Run tests
+    - name: Test code
       run: npm run test
-
     - name: Build project
       run: npm run build
-
-    - name: Preview build
-      run: npm run preview
+    - name: Deploy code
+      run: echo "Deploying..."
