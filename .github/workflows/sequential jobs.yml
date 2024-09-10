@@ -1,4 +1,4 @@
-name: With separate jobs
+name: Separate jobs with dependencies
 on: push    
 jobs:
   lint:

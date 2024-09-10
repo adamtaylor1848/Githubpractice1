@@ -1,4 +1,4 @@
-name: CI1
+name: six steps run under one job
 on: push    
 jobs:
   deploy:
